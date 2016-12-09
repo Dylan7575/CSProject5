@@ -1,11 +1,19 @@
 char* P;
 char* comment;
 
-char* data;
+unsigned char * data;
 FILE *ppm;
 typedef struct{
-	int r;
-	int g;
-	int b;
+	unsigned char r;
+	unsigned char g;
+	unsigned char b;
 }Pixel;
 Pixel* pix;
+
+
+void read_header();
+void p_type();
+void read_comment();
+void get_data();
+void write_p3(FILE* out);
+void write_p6(FILE*out);
